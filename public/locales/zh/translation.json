@@ -1,0 +1,19 @@
+{
+  "nav_home": "首頁",
+  "nav_projects": "作品集",
+  "nav_contact": "聯絡我",
+  "hero_title": "創造實用且有影響力的解決方案",
+  "hero_subtitle": "全端工程師 | 數據驅動型行銷人",
+  
+  "nav_about": "關於我",
+  "about_title": "創造實用解決方案的全端工程師",
+  "about_summary": "我專注於將程式設計的嚴謹邏輯與數據驅動的行銷策略相結合。熱衷於構建高效能的網站與 API，並能將技術成果轉化為業務上的量化價值。",
+  
+  "section_experience": "個人經歷",
+  "section_info": "個人資訊與連結",
+  
+  "info_github": "我的 GitHub 檔案",
+  "info_email": "電子郵件",
+  "info_phone": "聯絡電話",
+  "info_address": "居住地"
+}
