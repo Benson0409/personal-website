@@ -5,7 +5,7 @@
   "homepage": "https://benson0409.github.io/personal-website",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXT_PUBLIC_BASE_PATH='/personal-website' next build",
     "start": "next start",
     "lint": "eslint",
     "deploy": "npm run build && gh-pages -d out"
