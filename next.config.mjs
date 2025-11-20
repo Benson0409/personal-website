@@ -5,13 +5,14 @@ const isDev = process.env.NODE_ENV !== 'production';
 const repoName = '/personal-website'; 
 
 const nextConfig = {
-  // 關鍵修正 1: 保留 basePath 讓 Next.js 知道頁面結構
+  // basePath 保持不變 (以 / 開頭)
   basePath: isDev ? undefined : repoName, 
   
-  // 【關鍵修正 2】移除 assetPrefix！讓資源路徑保持最簡潔
-  assetPrefix: isDev ? undefined : '', // 或者直接移除這行，但保留空字串最安全
+  // 【關鍵最終修正】將 assetPrefix 設為空字串 '' 
+  // 這將會確保資源連結不帶有任何前綴，從而避免與 basePath 產生雙重前綴。
+  assetPrefix: isDev ? undefined : '', 
 
-  // 設置輸出模式為靜態 (必須用於 GitHub Pages)
+  // 設置輸出模式為靜態
   output: 'export', 
   reactStrictMode: true,
   images: {
