@@ -2,7 +2,10 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/Layout';
-import { FaCode, FaChartLine, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // 需要安裝 react-icons
+import { FaCode, FaChartLine, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+
+// 【關鍵修正 1】直接導入靜態 JSON 檔案
+import staticProjects from '../public/project-data.json'; 
 
 // 定義作品類別
 const categories = [
@@ -13,26 +16,19 @@ const categories = [
 
 export default function ProjectsPage() {
     const { t, i18n } = useTranslation();
+    
+    // 【關鍵修正 2】移除 fetch 邏輯，直接使用靜態資料
     const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState('all');
     
-    // 判斷當前語言是否為中文
     const isZh = i18n.language.startsWith('zh');
 
-    // 1. 串接 API 獲取作品列表
+    // 1. 獲取作品列表：使用 useEffect 載入靜態資料
     useEffect(() => {
-        // 模擬串接後端 API (pages/api/projects.js)
-        fetch('/api/projects')
-            .then(res => res.json())
-            .then(data => {
-                setProjects(data);
-                setIsLoading(false);
-            })
-            .catch(error => {
-                console.error("Error fetching projects:", error);
-                setIsLoading(false);
-            });
+        // 確保在客戶端載入資料，避免 Hydration 錯誤
+        setProjects(staticProjects); 
+        setIsLoading(false);
     }, []);
 
     // 2. 篩選作品列表
@@ -41,7 +37,7 @@ export default function ProjectsPage() {
         return project.category === selectedCategory;
     });
 
-    // 3. 渲染作品卡片元件
+    // 3. 渲染作品卡片元件 (ProjectCard function body unchanged)
     const ProjectCard = ({ project }) => {
         const title = isZh ? project.title_zh : project.title_en;
         const description = isZh ? project.description_zh : project.description_en;
@@ -127,7 +123,7 @@ export default function ProjectsPage() {
                 {/* 作品列表 */}
                 {isLoading ? (
                     <div className="text-center text-xl text-cyan-400 mt-20">
-                        {isZh ? '正在從 API 載入作品...' : 'Loading projects from API...'}
+                        {isZh ? '正在從本地檔案載入作品...' : 'Loading projects from local file...'}
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
