@@ -1,0 +1,19 @@
+{
+  "nav_home": "Home",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact",
+  "hero_title": "Creating Practical and Impactful Solutions",
+  "hero_subtitle": "Full-Stack Developer | Data-Driven Marketer",
+  
+  "nav_about": "About Me",
+  "about_title": "Full-Stack Developer Focused on Impactful Solutions",
+  "about_summary": "I specialize in blending the rigorous logic of programming with data-driven marketing strategies. Passionate about building high-performance websites and APIs, and translating technical achievements into measurable business value.",
+  
+  "section_experience": "Experience",
+  "section_info": "Info & Links",
+  
+  "info_github": "My GitHub Profile",
+  "info_email": "Email",
+  "info_phone": "Phone",
+  "info_address": "Location"
+}
