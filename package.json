@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://benson0409.github.io/personal-website",
-  "scripts": {
+ "scripts": {
     "dev": "next dev",
-    "build": "NEXT_PUBLIC_BASE_PATH='/personal-website' next build",
+    "build": "next build", 
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && gh-pages -d out"
-  },
+    "deploy": "next build && NEXT_PUBLIC_BASE_PATH='/personal-website' gh-pages -d out"
+},
   "dependencies": {
     "gh-pages": "^6.1.1",
     "i18next": "^25.6.3",
