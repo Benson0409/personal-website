@@ -9,7 +9,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/cadce809e1dd49be.js"
   ],
   "/projects": [
-    "static/chunks/cfaa83453bb8347d.js"
+    "static/chunks/6c492da554b0d9e8.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -21,7 +21,6 @@ self.__BUILD_MANIFEST = {
     "/_app",
     "/_error",
     "/about",
-    "/api/projects",
     "/projects"
   ]
 };self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
