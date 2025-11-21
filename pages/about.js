@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import { useTranslation } from 'react-i18next';
 
 // 假設您的 GitHub 網址
-const GITHUB_URL = "https://github.com/YourGitHubUsername"; 
+const GITHUB_URL = "https://github.com/Benson0409"; 
 
 export default function AboutPage() {
   // 【關鍵修正】必須解構 i18n 物件才能取得當前語言
@@ -11,38 +11,38 @@ export default function AboutPage() {
 
   // 靜態資料，方便統一管理
   const personalInfo = {
-    email: "your.email@example.com",
-    phone: "09XX-XXX-XXX",
+    email: "benson5508@gmail.com",
+    phone: "0966-592-388",
     address: "Taipei, Taiwan" // 隱藏詳細地址
   };
 
   // 經歷數據結構範例
   const experienceData = [
-    {
-      title_zh: "全端開發實習生",
-      title_en: "Full-Stack Intern",
-      company: "Tech Solutions Co.",
-      duration: "2023.08 - 2024.08",
-      description_zh: "負責 React 前端介面開發與 Python (Flask) API 串接，將產品部署到 AWS Serverless 環境。",
-      description_en: "Developed React frontend interfaces and integrated with Python (Flask) APIs, deploying the product to AWS Serverless environment.",
-    },
-    {
-      title_zh: "數位行銷助理",
-      title_en: "Digital Marketing Assistant",
-      company: "Data Growth Agency",
-      duration: "2022.01 - 2023.07",
-      description_zh: "執行 SEO 策略並管理社群媒體內容。透過數據分析，使網站流量提高 30%。",
-      description_en: "Executed SEO strategies and managed social media content. Increased website traffic by 30% through data analysis.",
-      },
-    {
-      title_zh: "全端開發實習生",
-      title_en: "Full-Stack Intern",
-      company: "Tech Solutions Co.",
-      duration: "2023.08 - 2024.08",
-      description_zh: "負責 React 前端介面開發與 Python (Flask) API 串接，將產品部署到 AWS Serverless 環境。",
-      description_en: "Developed React frontend interfaces and integrated with Python (Flask) APIs, deploying the product to AWS Serverless environment.",
-    },
-  ];
+  {
+    title_zh: "校園 CEO 行銷實習生",
+    title_en: "Campus CEO Marketing Intern",
+    company: "ASUS 華碩",
+    duration: "2023.03 - 2023.12",
+    description_zh: "負責規劃產品創意貼文、結合每月節慶提升曝光度，並協助校園活動宣傳與品牌推廣。此外也支援每月報帳整理、行政文件統整與跨單位溝通。",
+    description_en: "Created creative product posts aligned with monthly campaigns to increase brand exposure, supported campus marketing events, and assisted with monthly accounting and documentation. Collaborated across teams to enhance communication and brand impact."
+  },
+  {
+    title_zh: "系學會會長",
+    title_en: "Student Association President",
+    company: "國立台北教育大學 數位科技學系",
+    duration: "2022.09 - 2023.06",
+    description_zh: "協助新生融入系上環境，擔任學生與系上行政的溝通橋樑。規劃並舉辦多項活動以促進各年級間的互動與凝聚，提升學生參與度與系上形象。",
+    description_en: "Facilitated student engagement and served as a communication bridge between students and department staff. Organized multiple events to strengthen inter-grade connections and improve overall student involvement."
+  },
+  {
+    title_zh: "iOS Club 創社社長",
+    title_en: "Founder & President, iOS Club",
+    company: "國立台北教育大學",
+    duration: "2022.03 - 2023.02",
+    description_zh: "創立校內 iOS Club，邀請業界講師教授 Swift，帶領學生完成入門 App 專案，並推動參與每年的行動應用創新賽，提升學生的實作與競賽能力。",
+    description_en: "Founded the iOS Club and invited industry experts to teach Swift. Guided students through introductory app projects and encouraged participation in the annual Mobile App Innovation Contest to enhance their practical development skills."
+  },
+];
 
   // 使用 i18n.language.startsWith('zh') 來判斷當前是否為中文
   const isZh = i18n.language.startsWith('zh');

@@ -1,13 +1,12 @@
 {
   "nav_home": "Home",
   "nav_projects": "Projects",
-  "nav_contact": "Contact",
-  "hero_title": "Creating Practical and Impactful Solutions",
-  "hero_subtitle": "Full-Stack Developer | Data-Driven Marketer",
+  "hero_title": "Committed to Task Completion and Problem Solving",
+  "hero_subtitle": "Graduate Student | Programming & Marketing",
   
   "nav_about": "About Me",
-  "about_title": "Full-Stack Developer Focused on Impactful Solutions",
-  "about_summary": "I specialize in blending the rigorous logic of programming with data-driven marketing strategies. Passionate about building high-performance websites and APIs, and translating technical achievements into measurable business value.",
+  "about_title": "Dedicated Achiever Focused on Current Goals",
+  "about_summary": "I’m Benson Chien, a graduate student who loves creating and turning ideas into real projects. I started with game development and became proficient in C# and Unity, then gradually expanded my focus into AI, data analysis, and backend development to explore how to make interactive systems “smarter and more responsive.”I’m passionate about learning and enjoy building things—whether it’s programming, designing content, or planning marketing ideas. If it helps make a project better, I’m always willing to dive in. Through continuous creation, I hope to keep expanding my abilities and let people feel the care and thought I put into my work.",
   
   "section_experience": "Experience",
   "section_info": "Info & Links",

@@ -6,8 +6,8 @@ export default function Footer() {
   const { t } = useTranslation();
   
   // 請修改這裡為您的實際 GitHub 網址
-  const GITHUB_URL = "https://github.com/YourGitHubUsername"; 
-  const EMAIL = "your.email@example.com";
+  const GITHUB_URL = "https://github.com/Benson0409"; 
+  const EMAIL = "benson5508@gmail.com";
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800 py-6 mt-16">
