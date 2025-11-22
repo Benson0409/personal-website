@@ -22,26 +22,34 @@ export default function AboutPage() {
     title_zh: "校園 CEO 行銷實習生",
     title_en: "Campus CEO Marketing Intern",
     company: "ASUS 華碩",
-    duration: "2023.03 - 2023.12",
-    description_zh: "負責規劃產品創意貼文、結合每月節慶提升曝光度，並協助校園活動宣傳與品牌推廣。此外也支援每月報帳整理、行政文件統整與跨單位溝通。",
-    description_en: "Created creative product posts aligned with monthly campaigns to increase brand exposure, supported campus marketing events, and assisted with monthly accounting and documentation. Collaborated across teams to enhance communication and brand impact."
+    duration: "2023.07 - 2023.09",
+    description_zh: "負責規劃產品創意貼文、結合每月節慶提升曝光度。此外也支援每月報帳整理、行政文件統整與跨單位溝通。",
+    description_en: "Responsible for planning creative product posts and aligning them with monthly holidays to increase brand exposure. Additionally supported monthly accounting, administrative document organization, and cross-department communication."
   },
   {
     title_zh: "系學會會長",
     title_en: "Student Association President",
-    company: "國立台北教育大學 數位科技學系",
+    company: "國立臺北教育大學 數位科技學系",
     duration: "2022.09 - 2023.06",
     description_zh: "協助新生融入系上環境，擔任學生與系上行政的溝通橋樑。規劃並舉辦多項活動以促進各年級間的互動與凝聚，提升學生參與度與系上形象。",
-    description_en: "Facilitated student engagement and served as a communication bridge between students and department staff. Organized multiple events to strengthen inter-grade connections and improve overall student involvement."
+    description_en: "Assisted new students in adapting to the department environment and served as a communication bridge between students and administrative staff. Planned and organized various events to enhance interaction and cohesion across different grade levels, improving student engagement and the department’s overall image."
   },
   {
     title_zh: "iOS Club 創社社長",
     title_en: "Founder & President, iOS Club",
-    company: "國立台北教育大學",
-    duration: "2022.03 - 2023.02",
+    company: "國立臺北教育大學",
+    duration: "2022.09 - 2023.06",
     description_zh: "創立校內 iOS Club，邀請業界講師教授 Swift，帶領學生完成入門 App 專案，並推動參與每年的行動應用創新賽，提升學生的實作與競賽能力。",
-    description_en: "Founded the iOS Club and invited industry experts to teach Swift. Guided students through introductory app projects and encouraged participation in the annual Mobile App Innovation Contest to enhance their practical development skills."
-  },
+    description_en: "Founded the campus iOS Club, invited industry professionals to teach Swift, and guided students through introductory app development projects. Also encouraged participation in the annual Mobile App Innovation Contest to enhance students’ practical development skills and competition experience."
+    },
+    {
+      title_zh: "美食帳號經營",
+      title_en: "Food Account Management",
+      company: "個人經營",
+      duration: "2020.10 - 2023.09",
+      description_zh: "經營學校周邊的美食介紹帳號，初衷是讓同學更了解附近的餐廳選擇，減少每天為「吃什麼」煩惱。帳號最終累積超過 1,500 位追蹤者，成功提升校園周邊店家的曝光度與學生的用餐資訊便利性。",
+      description_en: "Managed a food-review social media account showcasing restaurants around the campus, aiming to help students explore nearby dining options without worrying about what to eat each day. The account grew to over 1,500 followers, increasing visibility for local businesses and providing useful dining information for students."
+    }
 ];
 
   // 使用 i18n.language.startsWith('zh') 來判斷當前是否為中文
