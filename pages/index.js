@@ -1,43 +1,118 @@
-// pages/index.js
-import Layout from '../components/Layout'; // <-- 引入 Layout
-import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+// path: pages/index.js
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import Head from 'next/head';
+import { portfolioData } from '../data/portfolioData';
 
-export default function HomePage() {
-  const { t } = useTranslation();
-  
-  const [isClient, setIsClient] = useState(false);
+// 引入元件
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import AboutSection from '../components/AboutSection';
+import ExperienceSection from '../components/ExperienceSection';
+import SkillsSection from '../components/SkillsSection';
+import ProjectsSection from '../components/ProjectsSection';
+import AcademicsSection from '../components/AcademicsSection';
+import ProjectDetailView from '../components/ProjectDetailView';
+import { BackToTopButton } from '../components/Utility';
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+export default function Home() {
+    const [lang, setLang] = useState('zh');
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [currentPage, setCurrentPage] = useState('home');
+    const [selectedProjectId, setSelectedProjectId] = useState(null);
+    const [activeSectionId, setActiveSectionId] = useState('about');
 
-  return (
-    // 使用 Layout 包裹整個頁面，這樣就不需要在這裡重複定義背景色和 Navbar
-    <Layout title={t('nav_home')}>
-      <section className="container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)]">
-        {isClient ? (
-          <>
-            {/* Hero Section */}
-            <h1 className="text-6xl font-extrabold mb-4 text-white">
-              {t('hero_title')}
-            </h1>
-            <p className="text-2xl text-cyan-400 font-mono mt-2">
-              {t('hero_subtitle')}
-            </p>
+    const t = useMemo(() => ({...portfolioData[lang], lang}), [lang]);
+    const sectionIds = useMemo(() => Object.keys(portfolioData.zh.sections), []);
+
+    const toggleDarkMode = () => setIsDarkMode(prev => !prev);
+    const toggleLanguage = () => setLang(prev => prev === 'zh' ? 'en' : 'zh');
+
+    // 處理 Dark Mode Class
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [isDarkMode]);
+
+    const scrollToSection = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            setActiveSectionId(id);
+        }
+    };
+
+    const handleViewProject = useCallback((projectId) => {
+        setSelectedProjectId(projectId);
+        setCurrentPage('projectDetail');
+        window.scrollTo(0, 0);
+    }, []);
+
+    const goHome = useCallback(() => {
+        setCurrentPage('home');
+        setSelectedProjectId(null);
+        window.scrollTo(0, 0);
+    }, []);
+
+    // Intersection Observer (Scrollspy)
+    useEffect(() => {
+        if (currentPage !== 'home') return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) setActiveSectionId(entry.target.id);
+            });
+        }, { rootMargin: '-30% 0px -70% 0px' });
+
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+        return () => observer.disconnect();
+    }, [currentPage, sectionIds]);
+
+
+    // --- 渲染畫面 ---
+    const renderContent = () => {
+        if (currentPage === 'projectDetail') {
+            return <ProjectDetailView projectId={selectedProjectId} t={t} goHome={goHome} lang={lang} />;
+        }
+        return (
+            <div className="fade-enter fade-enter-active">
+                {/* 佔位符，避免內容被 Header 遮住 */}
+                <div className="h-16"></div> 
+                <div className="bg-hero"><AboutSection t={t} /></div>
+                <ExperienceSection t={t} />
+                <SkillsSection t={t} />
+                <ProjectsSection t={t} handleViewProject={handleViewProject} lang={lang} />
+                <AcademicsSection t={t} isDarkMode={isDarkMode} lang={lang} />
+            </div>
+        );
+    };
+
+    return (
+        <div className={`min-h-screen font-sans bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500`}>
+            <Head>
+                <title>簡柏松 - 個人作品集</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
+
+            <Header 
+                t={t} 
+                goHome={goHome} 
+                currentPage={currentPage} 
+                toggleDarkMode={toggleDarkMode} 
+                isDarkMode={isDarkMode} 
+                toggleLanguage={toggleLanguage} 
+                scrollToSection={scrollToSection} 
+                activeSectionId={activeSectionId} 
+            />
             
-            <a 
-              href="#projects" 
-              className="mt-10 px-8 py-3 bg-cyan-500 text-gray-900 font-bold rounded-full hover:bg-cyan-400 transition duration-300 transform hover:scale-105"
-            >
-              {t('nav_projects')}
-            </a>
+            <main>{renderContent()}</main>
             
-          </>
-        ) : (
-          <div className="text-xl text-gray-500">Loading website...</div>
-        )}
-      </section>
-    </Layout>
-  );
+            <Footer t={t} />
+            <BackToTopButton />
+        </div>
+    );
 }

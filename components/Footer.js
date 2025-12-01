@@ -1,43 +1,16 @@
-// components/Footer.js
-import { useTranslation } from 'react-i18next';
-import { FaGithub, FaEnvelope } from 'react-icons/fa';
+// path: components/Footer.js
+import React from 'react';
 
-export default function Footer() {
-  const { t } = useTranslation();
-  
-  // 請修改這裡為您的實際 GitHub 網址
-  const GITHUB_URL = "https://github.com/Benson0409"; 
-  const EMAIL = "benson5508@gmail.com";
-
-  return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-6 mt-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-        
-        {/* 版權資訊 */}
-        <p className="mb-4 md:mb-0">
-          &copy; {new Date().getFullYear()} {t('nav_home')} | {t('info_address')}
-        </p>
-
-        {/* 連結區塊 */}
-        <div className="flex space-x-6">
-          <a 
-            href={GITHUB_URL} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-gray-400 hover:text-cyan-400 transition duration-300 flex items-center"
-            title="GitHub"
-          >
-            <FaGithub className="mr-1" /> GitHub
-          </a>
-          <a 
-            href={`mailto:${EMAIL}`} 
-            className="text-gray-400 hover:text-cyan-400 transition duration-300 flex items-center"
-            title="Email"
-          >
-            <FaEnvelope className="mr-1" /> {t('info_email')}
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
+export default function Footer({ t }) {
+    return (
+        <footer className="bg-gray-800 dark:bg-gray-950 text-white py-10 transition-colors duration-500">
+            <div className="max-w-7xl mx-auto px-4 text-center">
+                <p className="mb-4 text-gray-400">{t.footerText}</p>
+                <div className="flex justify-center space-x-6">
+                    <a href={t.githubUrl} target="_blank" className="text-gray-300 hover:text-purple-400 flex items-center space-x-2"><i className="fab fa-github w-6 h-6"></i><span className="font-semibold">Benson0409</span></a>
+                    <a href={`mailto:${t.contactEmail}`} className="text-gray-300 hover:text-purple-400 flex items-center space-x-2"><i className="fas fa-envelope w-6 h-6"></i><span>{t.contactEmail}</span></a>
+                </div>
+            </div>
+        </footer>
+    );
 }
