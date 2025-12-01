@@ -60,23 +60,66 @@ export const projects = [
         ],
         category: 'technical'
     },
+     {
+        id: 'earth_guardian',
+        title: "地球守護隊",
+        type: "環保教育 AR APP",
+        tech: "Unity,ARFoundation,C#",
+        description: "針對國小中高年級自然科學實驗單元設計一套桌上遊戲教具「地球守護隊」,共有 3個單元「水汙染」、「空氣汙染」、「土壤汙染」，單元間可互相搭配，增加遊戲難度,搭配平板電腦使用擴增實境的數位桌遊教學方式,提供學生一個環保教育的多元化遊戲體驗。",
+        contribution: "主要負責 APP 的程式架構與功能實現。",
+        link: "作品集內有介紹",
+        github: "https://github.com/Benson0409/EarthGuardians-AR-BoardGame",
+        images: [
+            "/img/projects/earth1.png",
+            "/img/projects/earth2.png",
+            "/img/projects/earth3.png",
+            "/img/projects/earth4.png",
+            "/img/projects/earth5.png",
+            
+        ],
+        details: [
+            { heading: "專案動機", content: "結合十二年國教課綱與 SDGs ，並以國小六年級「生物與環境」為核心，融入空氣、水、土壤三大污染議題。" },
+            { heading: "技術棧", content: "ARFoundation 跨平台部署、點數操控、圖片辨識成功率" },
+        ],
+        category: 'technical'
+    },
+    {
+        id: 'iOS_Club',
+        title: "iOS 社團",
+        type: "學校程式社團",
+        tech: "教學程式、提升程式程式能力",
+        description: "創立第一個以 iOS 開發為主題的校內程式社團，目標是提供學生一個學習 Swift 與 iOS 開發的交流平台，並鼓勵學生參加各類行動應用程式競賽以提升實務能力。",
+        contribution: "擔任社長，負責課程規劃、講師邀請與活動組織。",
+        link: "社團經歷介紹",
+        github: null,
+        images: [
+            "/img/projects/ios1.png",
+            "/img/projects/ios2.png",
+        ],
+        details: [
+            { heading: "幹部課程", content: "邀請學長學姊，在社課時間之外教導社員後端以及UI設計的技巧，讓社員進入iOS開發的世界。" },
+            { heading: "移動應用創新賽", content: "邀請獲獎的學長姐回來進行經驗分享，讓社員可以更了解比賽的規則與技巧，也鼓勵社員可以一起組隊參加比賽。" },
+        ],
+        category: 'marketing'
+    },
     {
         id: 'ntue_app',
         title: "國北生活圈 APP",
         type: "美食導覽 APP",
-        tech: "React Native, Expo, JavaScript",
+        tech: "React Native,  JavaScript",
         description: "一款為國立臺北教育大學學生設計、用於查看學校附近美食店家的 APP。功能包含地圖導航、店家種類篩選、收藏與評論系統。",
         contribution: "主要負責 APP 的程式架構與功能實現。",
         link: "作品集內有介紹",
         github: "https://github.com/Benson0409/NTUE-Food-App",
         images: [
-            "https://placehold.co/400x800/FFD700/FFFFFF?text=APP+主畫面",
-            "https://placehold.co/400x800/FFEC8B/FFFFFF?text=店家列表與篩選",
-            "https://placehold.co/400x800/FFE4B5/FFFFFF?text=評論與收藏功能",
+            "/img/projects/app1.png",
+            "/img/projects/app2.png",
+            "/img/projects/app3.png",
+            
         ],
         details: [
-            { heading: "專案動機", content: "解決大學生尋找校園周邊美食資訊不便的問題。" },
-            { heading: "技術棧", content: "React Native 跨平台開發，Expo 簡化部署。" },
+            { heading: "專案動機", content: "解決大學生尋找校園周邊美食資訊不便的問題，也讓大學生可以更了解校園旁的美食" },
+            { heading: "技術棧", content: "React Native 跨平台開發。" },
         ],
         category: 'technical'
     },
@@ -84,19 +127,18 @@ export const projects = [
         id: 'social_media',
         title: "社群媒體經營 - 國北生活圈",
         type: "行銷 / 社群管理",
-        tech: "Instagram, 文案撰寫, 攝影, 數據分析",
+        tech: "Instagram, 文案撰寫, 攝影",
         description: "在大學期間與朋友共同經營的美食帳號 'ntue_life'。專門介紹學校附近的美食，目的是解決大學生「不知道吃什麼」的日常痛點，並透過真實的評論與照片幫助大家快速了解餐廳特色。",
         contribution: "負責內容策略規劃、美食攝影、文案撰寫以及粉絲互動管理。",
         link: "IG: ntue_life",
         github: null,
         images: [
-            "https://placehold.co/800x450/FFB6C1/333333?text=IG+美食帳號首頁",
-            "https://placehold.co/800x450/FFC0CB/333333?text=美食攝影與文案",
-            "https://placehold.co/800x450/FF69B4/FFFFFF?text=粉絲互動數據",
+            "/img/projects/food1.png",
+            "/img/projects/food2.png",
         ],
         details: [
             { heading: "經營動機", content: "發現身邊同學常為用餐選擇煩惱，希望能建立一個在地的美食指南，凝聚校園生活圈的共同話題。" },
-            { heading: "執行策略", content: "定期發布高品質的美食照片與誠實評論，並利用 Hashtag 與地標增加觸及率。設計限時動態問答與粉絲互動，提升黏著度。" },
+            { heading: "執行策略", content: "定期發布學校附近店家的介紹貼文與真實評論，並利用 Hashtag 與地標增加觸及率。設計限時動態問答與粉絲互動，提升黏著度。" },
             { heading: "成果", content: "成功累積了一群忠實的校園粉絲，成為國北學生尋找周邊美食的重要參考指標。" },
         ],
         category: 'marketing'
@@ -111,9 +153,9 @@ export const projects = [
         link: "系上活動紀錄",
         github: null,
         images: [
-            "https://placehold.co/800x450/8A2BE2/FFFFFF?text=數位營+主視覺",
-            "https://placehold.co/800x450/9370DB/FFFFFF?text=學員上課互動",
-            "https://placehold.co/800x450/BA55D3/FFFFFF?text=營隊大合照",
+            "/img/projects/ntue1.jpg",
+            "/img/projects/ntue2.jpeg",
+            "/img/projects/ntue3.jpeg",
         ],
         details: [
             { heading: "活動目標", content: "1. 吸引潛在學生就讀。 2. 推廣數位科技設計學系品牌。 3. 培養籌備團隊的領導與合作能力。" },
@@ -127,19 +169,17 @@ export const projects = [
         title: "校園大型活動統籌與領導",
         type: "領導 / 大型活動",
         tech: "專案管理, 跨部門溝通, 危機處理",
-        description: "在擔任系學會活動長及學生會活動部部員期間，籌辦多場百人級別的大型活動，包括系內競賽、跨系聯誼以及全校性活動。這些經驗培養了我強大的組織能力與抗壓性。",
+        description: "在擔任系學會活動長及學生會活動部部員期間，籌辦多場大型活動，包括系內競賽、跨系聯誼以及全校性活動。這些經驗培養了我強大的組織能力與抗壓性。",
         contribution: "擔任總召或核心幹部，負責活動發想、流程控管、預算編列、場地協調及跨部門人力調度。",
         link: "校園活動經歷",
         github: null,
         images: [
-            "https://placehold.co/800x450/FFA500/FFFFFF?text=新生宿營+籌備紀錄",
-            "https://placehold.co/800x450/FFD700/333333?text=系學會活動+(窮嘶盃/電競)",
-            "https://placehold.co/800x450/FF8C00/FFFFFF?text=學生會活動+(耶晚/歌唱比賽)",
+            "/img/projects/active1.png",
+            "/img/projects/active2.png",
         ],
         details: [
             { heading: "新生宿營 (三系合辦)", content: "與教育系、社發系共同籌辦。目標是幫助新生快速認識同學與外系朋友。雖然最終因疫情取消，但在長達數月的籌備期中，學習了跨系溝通與大型活動架構的建立。" },
             { heading: "系學會活動系列", content: "舉辦「窮嘶盃」才藝競賽讓學生展現自我、「數位電競大亂鬥」凝聚系上向心力、「那年我們一起辦的系卡」增進感情。擔任活動長，負責統籌所有活動細節。" },
-            { heading: "學生會全校性活動", content: "參與籌辦「冬季嘉年華」(校園擺攤與表演) 以及「絕代風華星光夜」(全校歌唱比賽)。在這些活動中，學習了如何與學校行政單位對接以及管理更大規模的人流與資源。" },
         ],
         category: 'marketing'
     },

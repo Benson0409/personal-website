@@ -19,8 +19,14 @@ export default function AboutSection({ t }) {
                 <p className="text-xl md:text-2xl font-semibold text-purple-600 dark:text-purple-300 mb-8">{t.title}</p>
                 <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8">{t.summary}</p>
                 <div className="flex justify-center space-x-6 text-gray-600 dark:text-gray-300">
-                    <a href={t.githubUrl} target="_blank" className="flex items-center space-x-2 text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-white font-medium"><i className="fab fa-github w-6 h-6"></i><span>GitHub</span></a>
-                    <a href={`mailto:${t.contactEmail}`} className="flex items-center space-x-2 text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-white font-medium"><i className="fas fa-envelope w-6 h-6"></i><span>Email</span></a>
+                    <a href={t.githubUrl} target="_blank" className="flex items-center space-x-2 text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-white font-medium">
+                        <i className="fab fa-github text-xl"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href={`mailto:${t.contactEmail}`} className="flex items-center space-x-2 text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-white font-medium">
+                        <i className="fas fa-envelope text-xl"></i>
+                        <span>Email</span>
+                    </a>
                 </div>
             </div>
         </section>

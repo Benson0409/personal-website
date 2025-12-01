@@ -81,8 +81,7 @@ export default function Home() {
         return (
             <div className="fade-enter fade-enter-active">
                 {/* 佔位符，避免內容被 Header 遮住 */}
-                <div className="h-16"></div> 
-                <div className="bg-hero"><AboutSection t={t} /></div>
+                <div className="bg-hero pt-16"><AboutSection t={t} /></div>
                 <ExperienceSection t={t} />
                 <SkillsSection t={t} />
                 <ProjectsSection t={t} handleViewProject={handleViewProject} lang={lang} />

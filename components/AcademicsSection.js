@@ -1,4 +1,3 @@
-// path: components/AcademicsSection.js
 import React from 'react';
 import { Card } from './Utility';
 import {
@@ -25,8 +24,14 @@ ChartJS.register(
 );
 
 const GradeChart = ({ t, isDarkMode, lang }) => {
+    // 1. 一般圖表文字 (軸線、圖例)：深色模式用淺灰，淺色模式用深灰
     const textColor = isDarkMode ? '#e5e7eb' : '#1f2937';
     
+    // 2. Tooltip (提示框) 文字：邏輯剛好相反
+    // 因為 Tooltip 背景我們設為「深色模式白底」、「淺色模式黑底」以強調對比
+    // 所以文字顏色要反過來：深色模式(白底)用深字，淺色模式(黑底)用白字
+    const tooltipTextColor = isDarkMode ? '#1f2937' : '#ffffff';
+
     const data = {
         labels: t.semesterGrades.labels,
         datasets: [{
@@ -45,15 +50,27 @@ const GradeChart = ({ t, isDarkMode, lang }) => {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-             y: { min: 70, max: 100, ticks: { color: textColor }, grid: { color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)' } },
-             x: { ticks: { color: textColor }, grid: { display: false } }
+             y: { 
+                 min: 70, 
+                 max: 100, 
+                 ticks: { color: textColor }, 
+                 grid: { color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)' } 
+             },
+             x: { 
+                 ticks: { color: textColor }, 
+                 grid: { display: false } 
+             }
         },
         plugins: {
-            legend: { labels: { color: textColor } },
+            legend: { 
+                labels: { color: textColor } 
+            },
             tooltip: {
-                titleColor: '#1f2937',
-                bodyColor: '#1f2937',
-                backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                // 👇 修正這裡：使用 tooltipTextColor
+                titleColor: tooltipTextColor,
+                bodyColor: tooltipTextColor,
+                // 背景色：深色模式是白底(0.9)，淺色模式是黑底(0.8)
+                backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.8)',
             }
         }
     };
@@ -77,11 +94,16 @@ export default function AcademicsSection({ t, isDarkMode, lang }) {
                 </div>
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-50 mb-6 border-l-4 border-purple-500 pl-3">{lang === 'zh' ? '成績總覽與變化' : 'Grade Overview & Progression'}</h3>
-                    <Card className="shadow-2xl mb-8 dark:bg-gray-700/90 dark:border-gray-600"><GradeChart t={t} isDarkMode={isDarkMode} lang={lang} /></Card>
+                    <Card className="shadow-2xl mb-8 dark:bg-gray-700/90 dark:border-gray-600">
+                        <GradeChart t={t} isDarkMode={isDarkMode} lang={lang} />
+                    </Card>
                     <div className="space-y-6">
                         {t.grades.map((grade, index) => (
                             <div key={index} className="flex justify-between items-center p-4 bg-purple-50 dark:bg-purple-900 rounded-lg shadow-inner dark:shadow-none">
-                                <div className="text-lg font-medium text-gray-700 dark:text-gray-300">{grade.level}<p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{grade.detail}</p></div>
+                                <div className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                                    {grade.level}
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{grade.detail}</p>
+                                </div>
                                 <div className="text-2xl font-extrabold text-purple-800 dark:text-white bg-purple-200 dark:bg-purple-600 px-4 py-1 rounded-full">{grade.gpa}</div>
                             </div>
                         ))}
