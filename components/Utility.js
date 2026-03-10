@@ -2,8 +2,16 @@
 import React, { useState, useEffect } from 'react';
 
 export const Card = ({ children, className = '' }) => (
-    <div className={`p-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ${className}`}>
+    <div className={`p-8 premium-card relative z-10 overflow-hidden hover-tilt-glow ${className}`}>
         {children}
+    </div>
+);
+
+export const SectionDivider = ({ fillColorClass = "divider-fill-gray-50" }) => (
+    <div className="section-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.26,192.39,109.86Z" className={fillColorClass}></path>
+        </svg>
     </div>
 );
 
@@ -32,7 +40,7 @@ export const BackToTopButton = () => {
 
         // 3. 設定監聽
         window.addEventListener('scroll', toggleVisibility);
-        
+
         // 4. 清除監聽
         return () => {
             window.removeEventListener('scroll', toggleVisibility);
@@ -42,10 +50,10 @@ export const BackToTopButton = () => {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-6 right-6 p-4 rounded-full bg-purple-600 text-white shadow-lg hover:bg-purple-700 transition-opacity duration-300 z-[9999] ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`fixed bottom-8 right-8 w-14 h-14 flex items-center justify-center rounded-full premium-btn z-[9999] ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             aria-label="Scroll to top"
         >
-            <i className="fas fa-arrow-up"></i>
+            <i className="fas fa-arrow-up text-xl"></i>
         </button>
     );
 };

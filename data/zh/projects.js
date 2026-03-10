@@ -32,6 +32,11 @@ export const projects = [
         images: [
             "/img/projects/ga1.png",
             "/img/projects/ga2.png",
+            "/img/projects/ga3.png",
+            "/img/projects/ga4.png",
+            "/img/projects/ga5.png",
+            "/img/projects/ga6.png",
+            "/img/projects/ga7.png",
         ],
         details: [
             { heading: "研究目的", content: "探索遺傳演算法在遊戲自適應難度調整中的應用，並調查不同玩家再不同難度下的遊戲表現與沈浸度感受。" },
@@ -52,7 +57,7 @@ export const projects = [
             "/img/projects/web2.png",
             "/img/projects/web3.png",
             "/img/projects/web4.png",
-            
+
         ],
         details: [
             { heading: "專案動機", content: "為了維護校史資料的完整性與準確性，並提供訪客清晰、互動式的歷史瀏覽體驗。" },
@@ -60,7 +65,7 @@ export const projects = [
         ],
         category: 'technical'
     },
-     {
+    {
         id: 'earth_guardian',
         title: "地球守護隊",
         type: "環保教育 AR APP",
@@ -75,7 +80,7 @@ export const projects = [
             "/img/projects/earth3.png",
             "/img/projects/earth4.png",
             "/img/projects/earth5.png",
-            
+
         ],
         details: [
             { heading: "專案動機", content: "結合十二年國教課綱與 SDGs ，並以國小六年級「生物與環境」為核心，融入空氣、水、土壤三大污染議題。" },
@@ -115,7 +120,7 @@ export const projects = [
             "/img/projects/app1.png",
             "/img/projects/app2.png",
             "/img/projects/app3.png",
-            
+
         ],
         details: [
             { heading: "專案動機", content: "解決大學生尋找校園周邊美食資訊不便的問題，也讓大學生可以更了解校園旁的美食" },
