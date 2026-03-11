@@ -50,7 +50,16 @@ export default function AboutSection({ t }) {
                     <div className="w-full md:w-2/3 flex flex-col justify-center text-center md:text-left pt-4 md:pt-0">
                         <div className="animate-unbox delay-200 mb-2">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                                {t.name}
+                                {t.lang === 'zh' && t.name.indexOf(' ') !== -1 ? (
+                                    <>
+                                        {t.name.substring(0, t.name.indexOf(' '))}
+                                        <span className="block mt-2 text-4xl md:text-5xl lg:text-6xl text-slate-700 dark:text-slate-300">
+                                            {t.name.substring(t.name.indexOf(' ') + 1)}
+                                        </span>
+                                    </>
+                                ) : (
+                                    t.name
+                                )}
                             </h1>
                         </div>
 

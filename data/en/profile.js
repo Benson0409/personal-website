@@ -1,5 +1,5 @@
 export const profile = {
-    name: "Po-Sung Chien (Benson Chien)",
+    name: "Po-Sung Chien",
     title: "Game & AI Developer | Master's Student in Digital Tech Design",
     summary: "I am a master’s student majoring in Game Design, initially focused on game development using C#. Over time, I developed a strong interest in integrating artificial intelligence and backend systems, leading me to learn Python, Flask, Docker, and database management while experimenting with AI-driven adaptive difficulty in games. Although my technical skills are still growing, I am passionate about tackling challenges and finding solutions through continuous learning. I hope to leverage the LINE internship opportunity to gain hands-on experience in real-world projects, deepen my understanding of AI, data analysis, and system development, and grow into a more versatile engineer.",
 }
